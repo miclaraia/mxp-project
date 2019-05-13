@@ -13,7 +13,7 @@
 % That way, you always have this original template file to use.
 
 \documentclass[aps,prstab,reprint,12pt]{revtex4-1}
-\usepackage[title]{appendix}
+%\usepackage[title]{appendix}
 \usepackage{xspace}
 \usepackage{amsfonts}
 \usepackage{graphicx}
@@ -45,8 +45,10 @@
 \title{A Relation of Mechanical and Electrical Power using a Watt Balance}
 
 % Your name should go first, marked as ``communicating author'' 
-\author{M. Laraia and J. Hirschi}
+\author{M. Laraia}
+\thanks{Communicating Author}
 % Your lab partner or partners can come next
+\author{J. Hirschi}
 
 \affiliation{University of Minnesota, Minneapolis, MN, USA}
 
@@ -65,15 +67,6 @@ The International System of units (SI) is being redefined in 2019. In the origin
 For this reason the SI system of units is being redefined to rely only on fundamental constants of the universe. As an example, the meter can be defined in terms of the speed of light in vacuum, and the second can be defined in terms of the frequency of light emitted in a specific energy transition in Caesium-133.
 The Kilogram can be defined in terms of Planck's constant, and a device that can measure this relationship is a Watt balance.
 
-% Maybe reword, be more concise but still conveying the story
-% Maybe the first figure should be the mass drift figure?
-
-%\begin{figure}[h]
-    %\centering\includegraphics[width=.95\linewidth]{figs/si_units.png}
-    %\caption{As of May 20, 2019, all SI units will be defined in terms of fundamental constants of the universe. 
-    %\cite{wiki_si}}\label{fig:si}
-%\end{figure}
-
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.95\linewidth]{figs/ipk_mass_drift.png}
@@ -81,35 +74,21 @@ The Kilogram can be defined in terms of Planck's constant, and a device that can
     \label{fig:ipk_divergence}
 \end{figure}
 
-%For this reason there is a push to redefine the SI units in terms of fundamental constants of the universe, as many of the original SI units were defined in a similar and sometimes arbitrary way. For example, length has been redefined in terms of speed of light in vacuum, and time in terms of the period of radiation of a specific transition in caesium-133. The kilogram, ampere, kelvin, and mole are the last remaining SI units to be redefined in such terms. A summary of the fundamental dependencies of the redefined SI system is shown in figure \ref{fig:si}. 
-%Additional discussion of redefinition
 
-%After the SI system has been defined in terms of fundamental constants of the universe, anybody anywhere will be able to measure a unit in the SI system. This means that an instrument need not be calibrated to a standard object, like the IPK, but instead can be calibrated directly by measuring the fundamental constants. This guarantees that our system of measurements will remain constant through time, and furthermore ensures the repeatability of any physical experiment far into the future.
-
-
-What follows is a general description of how a Watt balance works. A more detailed description will follow in sections~\ref{s:theory} and~\ref{s:device}.
+What follows is a general description of how a Watt balance works. A more detailed description will follow in Section~\ref{s:theory} and Section~\ref{s:device}.
 A watt balance resembles an equal arm balance with each side of the arm having a permanent magnet hanging over coiled wire. The Watt balance is operated in two modes. In the first mode an object is placed on the balance, and a current applied to one coil creates a force on the adjacent permanent magnet that acts against the weight of the object. In the second mode one of the coils is driven to oscillate the balance arm. The motion of the permanent magnet in the second coil induces an electromotive force that can be measured. The two modes are called the force mode and the velocity mode.
 
 
-%A watt balance is effectively an equal arm balance where the weight of an object acts against an electromagnetic force. More generally, a watt balance balances mechanical power with electrical power. The electromagnetic force in this situations is the force acting on a magnetic quadrupole near a current carrying loop of wire. A watt balance that can generate precise electrical power to balance the mechanical power acting on the object can therefore be used to directly measure the mass of the object. What remains is linking the electrical power to Planck's constant.
-
-Planck's constant can be recovered when measuring induced emf in the velocity mode and the applied current in the velocity mode. The induced emf can be measured with Josephson junctions, and the applied current in the force mode can be measured with a Josephson junction measuring the voltage over a quantum Hall resistance standard. This is discussed further at the end of section~\ref{s:theory}.
-
-%Planck's constant appears when considering the Josephson effect and the Hall effect of quantum mechanics. The Josephson effect provides a quantized voltage standard, and the quantum Hall effect provides a quantized resistance standard, both of which relating Planck's constant to the frequency of an applied electromagnetic wave. Together these quantum effects can be used to measure electrical power, and a Watt balance utilizing these effects can directly relate the mass of the object to Planck's constant. We discuss this further at the end of section \ref{s:theory}
-
+Planck's constant can be recovered when measuring induced emf in the velocity mode and the applied current in the velocity mode. The induced emf can be measured with Josephson junctions, and the applied current in the force mode can be measured with a Josephson junction measuring the voltage over a quantum Hall resistance standard. This is discussed further at the end of Section~\ref{s:theory}.
 
 The official Watt balance at the National Institute of Standards and Technology was built with Josephson junctions and quantum Hall resistance standards. To redefine the SI kilogram, the Watt balance was used with a standard mass calibrated to the IPK to fix Planck's constant relative to the kilogram. After redefinition, a Watt balance could be used to precisely measure the mass of a standard mass in terms of Planck's constant.
 
-%The National Institute of Standards and Technology (NIST) constructed a Watt Balance utilizing these quantum effects. The measurements from this device are used to fix Planck's constant in terms of the IPK. After redefinition, a Watt balance utilizing the quantum effects can be used to measure the mass of an object in terms of Planck's constant.
-
 This provides the motivation for building a Watt balance. As we do not have access to Josephson junctions and quantum Hall resistance standards for this experiment, the device and the experiment described here will not measure the relationship to Planck's constant. Instead we aim to build a Watt balance that can relate the mechanical and electrical power in the two modes described above.
-%The device we build in our experiment will not be able to rely on the Josephson effect and quantum Hall effect in our measurements, as utilizing these effects would each constitute semester projects on their own. Therefore we do not expect to be able to relate our measurements to Planck's constant. Instead the focus of our experiment will be to construct a device capable of balancing mechanical power with electrical power in the style of a Watt balance described above with the two modes of operation. We hope that our work in constructing such a device can be extended by other groups in the future to measure Planck's constant by using the Josephson and quantum Hall effects.
-
 
 \begin{figure}
     \centering
     \includegraphics[width=0.95\linewidth]{figs/watt_balance.png}
-    \caption{TODO}
+    \caption{An image of the completed device used in this experiment.}
     \label{fig:device_image}
 \end{figure}
 
@@ -128,7 +107,14 @@ If we assume that the rate of change of the magnetic flux is proportional to the
     \Phi_v  = \frac{V}{v}
 \end{equation}
 
-When the balance arm is driven in the velocity mode, a voltage is induced proportional to the magnetic flux $\Phi_v$ and the velocity of the arm. This measurement can be used to factor out the flux $\Phi_f$ in the force mode, as will be described below.
+When the balance arm is driven in the velocity mode, a voltage is induced proportional to the magnetic flux $\Phi_v$ and the velocity of the arm. A schematic diagram of the velocity mode is shown in figure~\ref{fig:vmode-concept}. This measurement can be used to factor out the flux $\Phi_f$ in the force mode, as will be described below.
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=0.6\linewidth]{figs/watt-balance-vmode.png}
+    \caption{Conceptual diagram of the velocity mode. The coil on the right is driven sinusoidally with an electromagnet. The coil is thereby driven to oscillate near a permanent magnet, inducing an emf in the coil.}
+    \label{fig:vmode-concept}
+\end{figure}
 
 The Lorentz force law can be described as follows, where $q$ is a charge, $v$ is its velocity, $E$ is the electric field, and $B$ is the magnetic field:
 \begin{equation}
@@ -149,26 +135,18 @@ In the force mode the Watt balance will be operated to generate a force countera
 \begin{equation}\label{eq:force_equation}
     \Phi_f = \frac{mg}{I}
 \end{equation}
-where $g$ is the local acceleration due to gravity. The two modes of measurement and their force diagrams are illustrated in figure~\ref{fig:Force}. 
+where $g$ is the local acceleration due to gravity. A schematic diagram of the force mode is shown in figure~\ref{fig:fmode-concept}.
 
-\begin{figure}[t]
-     \centering\includegraphics[width=.95\linewidth]{figs/Force_Diagram.jpeg}
-     \caption{Velocity mode measurement, illustrated on the left, depicts a coil moving vertically in a radial magnetic field and a voltage $V$ is induced. Force mode measurement, right, displays that the upward electromagnetic force generated by the coil opposes the gravitational force exerted on the mass. \cite{Chao2015}}\label{fig:Force}
-\end{figure}
+% \begin{figure}[t]
+%      \centering\includegraphics[width=.95\linewidth]{figs/Force_Diagram.jpeg}
+%      \caption{Velocity mode measurement, illustrated on the left, depicts a coil moving vertically in a radial magnetic field and a voltage $V$ is induced. Force mode measurement, right, displays that the upward electromagnetic force generated by the coil opposes the gravitational force exerted on the mass. \cite{Chao2015}}\label{fig:Force}
+% \end{figure}
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.6\linewidth]{figs/watt-balance-vmode.png}
-    \caption{Velocity mode concept  TODO}
-    % TODO
-    \label{fig:vmode-concept}
-\end{figure}
 
-\begin{figure}[t]
+\begin{figure}[b]
     \centering
     \includegraphics[width=0.6\linewidth]{figs/watt-balance-fmode.png}
-    \caption{Force mode concept TODO}
-    % TODO
+    \caption{Conceptual diagram of the force mode. A mass is placed on the platform, while a current is applied to one of the coils. This creates a magnetic force that balances the weight of the mass.}
     \label{fig:fmode-concept}
 \end{figure}
 
@@ -183,12 +161,13 @@ A successful experiment would measure a 1-to-1 correspondence between electrical
 
 Finally, we provide an additional discussion on the quantum effects used in the official NIST Watt balance. 
 The Josephson effect is an effect in the quantum realm describing current across a Josephson function. A Josephson junction consists of two superconductors coupled by a weak link.\ 
-when an electric field oscillating at a microwave frequency $f$ is applied a small current is forced through the junction. This creates a quantized voltage across the junction.
+When an electric field oscillating at a microwave frequency $f$ is applied a small current is forced through the junction. This creates a quantized voltage across the junction.
 Many Josephson junctions can be combined to create a voltage standard that couples the generated voltage to Planck's constant as follows, where $h$ is Planck's constant, $e$ is the charge of an electron, and $K_J$ is Josephson constant
 \begin{equation}\label{eq:josephson}
     V=\frac{h}{2e}f \equiv \frac{1}{K_J} f
 \end{equation}
-The NIST Watt balance uses 250,000 junctions to measure any voltage up to 10\si{V} with a precision of 1\si{nV}. The approximate \$100,000 cost of this setup makes it unfeasable in an MXP classroom setting \cite{Chao2015}.
+The NIST Watt balance uses 250,000 junctions to measure any voltage up to 10\si{V} with a precision of 1\si{nV}. The approximate \$100,000 cost of this setup makes it unfeasable in an MXP classroom setting~\cite{Chao2015}.
+\newpage
 
 The quantum Hall effect is a special case of the classical Hall effect, but where the Hall conductance is quantized. This effect occurs in two-dimensional systems of electrons subjected to low temperatures and strong magnetic fields. The quantized Hall conductance $\sigma$ can be described as follows, where $\nu$ belongs to either the set of integers or to a set of known fractions
 \begin{equation}
@@ -202,7 +181,7 @@ If we consider only the integer Hall conductance, then we arrive at the followin
 
 The NIST Watt balance uses the quantum Hall effect to measure resistance with a relative uncertainty of 1 in $10^9$. Together with a Josephson voltage standard this can be used to measure current with incredible precision. To determine the value of $VI$ from equation~\ref{eq:watt_equation}, we combine two Josephson standards from equation~\ref{eq:josephson} and a Hall resistance standard from equation~\ref{eq:resistance} to yield the following expression, where $C$ is a known constant related to the number of Josephson junctions
 \begin{equation}
-    VI=V \frac{V_H}{R_H} = C f_1 f_2 \left(\frac{h}{2e}\right)^2 \frac{e^2}{h}=C \frac{f_1f_2}{4} h
+    VI=V \frac{V_H}{R_H} = C f_1 f_2 {\left(\frac{h}{2e}\right)}^2 \frac{e^2}{h}=C \frac{f_1f_2}{4} h
 \end{equation}
 
 We see that $h$ finally drops out, and plugging back into equation~\ref{eq:watt_equation} yields the following expression
@@ -217,14 +196,14 @@ Equation~\ref{eq:planck} defines the kilogram in terms of Planck's constant and 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{EXPERIMENTAL SETUP} \label{s:device} %%%%%%%%
+\section{EXPERIMENTAL SETUP}\label{s:device} %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[t]
     \centering
-    \includegraphics{figs/device-diagram.png}
-    \caption{Device diagram TODO}
+    \includegraphics[width=0.8\linewidth]{figs/device-diagram.png}
+    \caption{Schematic diagram of the device. The two coils are labeled blue and red to avoid confusion. The blue coil is driven in the velocity mode. A current is applied to the red coil in the force mode, and the induced emf is measured in the velocity mode.}
     \label{fig:device_diagram}
 \end{figure}
 
@@ -235,62 +214,44 @@ From each end of the arm hangs a platform. A universal joint is used to hang the
 The magnets are oriented antiparallel in a quadrupolar configuration. Below each pair of magnets is a 3D-printed cylinder that carries the coiled wire.
 The cylinder is designed with a groove to hold the wire. 3,000 turns of 36-AWG magnetic wire are wound onto each cylinder.
 
-The two coils are labeled as the red coil and the blue coil to limit confusion. In the velocity mode, the blue coil is connected to an HP Agilent 33120A arbitrary waveform generator (function generator). The red coil is connected to an NI 6321 data acquisition (DAQ) card to measure the induced voltage. In the force mode the blue coil is disconnected. The red coil is connected in series to an SRS600 low noise preamplifier and an HP 34410A digital multimeter configured to measure current. The SRS600 output is controlled by the DAQ card.
+The two coils are labeled as the red coil and the blue coil to limit confusion, as shown in figure~\ref{fig:device_diagram}. In the velocity mode, the blue coil is connected to an HP Agilent 33120A arbitrary waveform generator (function generator). The red coil is connected to an NI 6321 data acquisition (DAQ) card to measure the induced voltage. In the force mode the blue coil is disconnected. The red coil is connected in series to an SRS600 low noise preamplifier and an HP 34410A digital multimeter configured to measure current. The SRS600 output is controlled by the DAQ card.
 
-A previous design had the permanent magnets mounted on the base and the coils suspended from the platforms. The configuration described here has the coils mounted on the base and the magnets suspended from the platforms. This configuration was chosen as the wires to the coils suspended from the platform were too rigid to allow the platform to hang freely as the arm moved. The drawback to the configuration with the suspended magnets is that as each magnet weights % TODO magnet weight
+A previous design had the permanent magnets mounted on the base and the coils suspended from the platforms. The configuration described here has the coils mounted on the base and the magnets suspended from the platforms. This configuration was chosen as the wires to the coils suspended from the platform were too rigid to allow the platform to hang freely as the arm moved. The drawback to the configuration with the suspended magnets is that as each magnet weighs on the order of 100g,
 , the moment of inertia of the arm is increased significantly.
 
 
 A MicroEpsilon laser triangulation displacement sensor is mounted below one of the platforms. This sensor is sensitive to within 1\si{\mu m} within a measurement range of 30-50\si{mm}. The top of the platform stage is extended with a flat LEGO brick to reflect the displacement sensor laser. A piece of white printer paper is attached below this extension to ensure the shape of the LEGO brick does not distort the reflection of the laser. The displacement sensor is connected to the measurement computer with an RS232 serial interface.
 
 
-% 
-% In this section we describe the construction of the Watt balance. The design is based on the Lego Watt balance design illustrated in \cite{Chao2015}, but with some modifications which will be explained below. An image of the completed design is shown in figure \ref{fig:our_balance}.
-% 
-% The design resembles that of a traditional equal arm balance: there is an arm balancing on a small fulcrum with two pans hanging on either side. The pans hang from the balance arm with a universal joint to allow the pans to hang freely. From each pan hangs a brass screw with two neodymium ring magnets mounted. The magnets are oriented such that the magnetic dipoles are aligned anti-parallel. Beneath each magnet pair there is a coil of wire. The coils are 3,000 turns of 36-AWG wire wound around plastic 3D-printed cylinders. The coils are positioned below the magnets with about 10\si{mm} clearance. Increasing the clearance lifts the magnets out of the coils. This gives the balance arm a larger range of motion, but will decrease the magnitude of the magnetic flux through the coils.
-% 
-% Both the force mode and velocity mode require knowing the displacement of the magnets from the balanced position. For this purpose a compact laser triangulation displacement sensor, specifically a Micro-Epsilon optoNCDT ILD1302, is used. This sensor has a measurement range of 30mm to 50mm. 
-% % TODO resolution of micro epsilon?
-% The sensor is attached to the base of the device and oriented to point at a bar extending from one of the pans. The device is positioned so the range of motion of the arm falls within the measurement range of the device. The device determines the position of the arm by reflecting a laser off the bar. A smooth piece of paper is glued to the bottom of the bar to ensure the laser reflects uniformly from the surface.
-% 
-% One coil is connected to an HP Agiletn 33120A function generator, which is controlled by a LabView program. This coils is only driven in the velocity mode. The other coil is connected to two different devices depending on the mode of operation. In the velocity mode we measure the current through the coil, while in the force mode the coil is driven with a steady current. In both modes this coil is connected to a data acquisition card (DAQ).
-% % TODO determine what daq card we're using
-% To protect the DAQ from the large load of the coil an amplifier is connected between the DAQ and the coil for the force mode.
-% % TODO determine what amplifier we are using
-% 
-% % TODO explain why the coils are positioned below instead of above
-% Previous work in building a Lego based Watt balance \cite{Chao2015} had the permanent magnets mounted below with the coils hanging from the pans. Such a design would have wires running from the coils up past the pans to the arm, then to the center of the arm, then down through the center of the base. We found that these wires were stiff enough to apply a torque at two locations. Both the balance of the arm as well as the balance of the pans below the arm were affected. We instead decided to hang the permanent magnets from the pans and place the coils on the ground. The permanent magnets are significantly heavier than the coils, so such a configuration significantly increases the moment of inertia of the balance. 
-% % TODO do we need to add a sentence at the end of this? To say why it's ok to swap the magnets and the coils
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{PROCEDURE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 In this section we describe the data acquisition process. In the first stage the emf induced in the loop is measured as a function of the velocity of the balance arm. In the second stage the current required to balance the arm is measured for a given mass configuration. We begin by describing the data acquisition process for the velocity mode. % definitely need a TODO
 
-The displacement data is gathered from the MicroEpsilon displacement sensor with a LabView program. The LabView program runs at a fixed 100Hz frequency, while the measurement rate of the displacement sensor is 750Hz \cite{muepsilon_sheet}. To compensate for this difference the measurements collected at each time step are averaged. An added benefit is that this smooths the noisy signal from the displacement sensor.
+The displacement data is gathered from the MicroEpsilon displacement sensor with a LabView program. The LabView program runs at a fixed 100Hz frequency, while the measurement rate of the displacement sensor is 750Hz \cite{muepsilon_manual}. To compensate for this difference the measurements collected at each time step are averaged. An added benefit is that this smooths the noisy signal from the displacement sensor.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{VELOCITY MODE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In the velocity mode the blue coil is driven with the function generator while the induced voltage in the red coil is measured with the DAQ. The function generator used in this experiment has a lower signal amplitude limit of 50\si{mV_{pp}}. To further reduce the signal amplitude the red coil is separated from the function generator output with a 1:10 voltage divider circuit.
+In the velocity mode the blue coil is driven with the function generator while the induced voltage in the red coil is measured with the DAQ. The function generator used in this experiment has a lower signal amplitude limit of 50\si{mV_{pp}}.
+To further reduce the signal amplitude the red coil is separated from the function generator output with a 1:10 voltage divider circuit.
 
 During a measurement run the function generator was configured to output a signal with an amplitude range of $50-300$ \si{mV_{pp}} and a frequency range of $100-1000$ \si{mHz}. This frequency range was chosen to be close to the natural frequency of the balance arm, which was determined to be roughly in the range $550-650$ \si{mHz}. The signal amplitude for a particular measurement run and frequency were chosen such that the measured peak-to-peak displacement was approximately 1\si{mm}. The LabView program was configured to collect data with a 10ms time step.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\subsection{FORCE MODE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%A LabView program collects time series measurements of the magnet displacement and induced voltage in the red coil.
-
-%Both coils are used in the velocity mode measurement. In this section Coil A refers to the coil where the induced emf is measured, while Coil B refers to the coil being driven. Coil B is driven by the function generator with a sinusoidal wave with frequency $500\si{mHz}$ and amplitude $0.5V_{pp}$. The natural frequency of the balance arm was found to be near 650mHz. The coil is driven near the natural frequency but not quite at the same value.
-%% TODO why^
-
-%Driving Coil B oscillates the permanent magnets in and out of coil A. This induces an emf in coil A proportional and in phase with the velocity of the oscillatory motion. While Coil B is driven, the micro-epsilon sensor measures the position of the bar over time while the DAQ measures the amplitude of the induced emf over time. The LabView program running the data acquisition program ensures that the position and emf measurements are synchronized to within a few milliseconds. A time step of $10\si{ms}$ is used for both measurements. The velocity is determined from the position data by calculating the symmetric difference quotient of the position data with respect to time. The constant of proportionality between the velocity $v$ and emf $\mathscr{E}$ gives the desired quantity of the magnetic flux $\Phi_B N$. This can be determined from the measurements using a linear least squares regression.
-
-
-\subsection{FORCE MODE}
-
-In the force mode a current is applied to the red coil to oppose the weight of a mass placed in the mass pan. A LabView program controls the current output to the red coil using a PID controller. A PID controller is a control-loop feedback mechanism to continuously modulate an output to move the system to a desired state.
+In the force mode a current is applied to the red coil to oppose the weight of a mass placed in the platform. A LabView program controls the current output to the red coil using a PID controller. A PID controller is a control-loop feedback mechanism to continuously modulate an output to move the system to a desired state.
 The PID calculates the error between the desired input (setpoint) and the measured process variable.
 The PID calculates a correction with three terms, the proportional, the integral, and the differential terms. At each time step the proportional term considers the current value of the error, the integral term considers how long the error has persisted, and the differential term considers how the error changes over time.
 More information about PID theory can be found in \cite{pid}.
@@ -299,7 +260,7 @@ The magnitude of the proportional, integral, and differential corrections is det
 The parameters were tuned first by adjusting $K_p$ and $K_I$ until the balance was able to slowly bring the process variable near the set point.
 Then the $K_d$ term was increased until the PID was able to counter small oscillations about the set point. The parameters were accepted when the balance was able to go start from rest and remain within 1\% of the setpoint for more than 5 seconds. The values for the parameters are summarized in table~\ref{tab:pid}. The setpoint was determined by placing a level over the center of the balancing arm and varying the setpoint until the balance arm was level. Using this method the setpoint was chosen as 8.5mm.
 
-\begin{table}
+\begin{table}[b]
     \centering
     \begin{tabular}{|c|c|c|}\hline
         $K_p$ & $K_I$ & $K_d$ \\\hline
@@ -316,7 +277,7 @@ Two current measurements are made when making a force mode measurement. In the f
 \end{align}
 As equation~\ref{eq:force_current} shows, the tare mass is irrelevant. It is possible that the current required to balance the mass will drift. To correct for the drift these steps are repeated 2-3 times for a given measurement run. The resulting measurements with and without the mass are averaged to get $I_T$ and $I$.
 
-The mass of a given object was determined with a chemical scale accurate to 1mg. The mass was varied in small increments by bundling small amounts of wire. The tare mass used was typically a 2g calibrated mass. The resulting measurements are shown in figure!\ref{fig:both-data}, and will be discussed further in section~\ref{s:discussion}.
+The mass of a given object was determined with a chemical scale accurate to 1mg. The mass was varied in small increments by bundling small amounts of wire. The tare mass used was typically a 2g calibrated mass. The resulting measurements are shown in figure~\ref{fig:force-data}, and will be discussed further in section~\ref{s:discussion}.
 
 %This measurement involves placing a known mass onto the mass pan, located above coil A in figure \ref{fig:chao_balance}, and inducing an electromagnetic force on coil B to counteract the gravitational force of the mass. The magnitude of the electromagnetic force will be controlled in a way such that the balance arm will stay in it's nulled position after masses are added or removed. A proportional integral derivative controller (PID), programmed using LabVIEW, will be used to regulate the electromagnetic force. This type of controller uses manual feedback to automate the changes necessary in the
 %electromagnetic force to hold the balance in the null position. Several constants will need to be determined and inputted into the PID controller to regulate this specific system.
@@ -328,23 +289,55 @@ The mass of a given object was determined with a chemical scale accurate to 1mg.
 % If successful, our watt balance will measure a 1-to-1 correspondence between $(\Phi_B N)_v$ and $(\Phi_B N)_F$. 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{DATA ANALYSIS}\label{s:discussion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Force Mode %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In this section we describe the steps used to process and analyze the measured data. The general formula for propagasub
 The error propagation for a multi-variable function $\gamma$ defined for $n$ variables $\delta_1\cdots\delta_n$ is defined as follows
 \begin{equation}
-    \sigma_\gamma^2 = \sum_{\delta_1}^{\delta_n} \sigma_\delta^2 \left( \frac{\partial \gamma}{\partial \delta} \right)^2
+    \sigma_\gamma^2 = \sum_{\delta_1}^{\delta_n} \sigma_\delta^2 {\left( \frac{\partial \gamma}{\partial \delta} \right)}^2
 \end{equation}
 All uncertainties quoted in this analysis are calculated using this formula.
 
 For the force mode we made at least two measurements each of $I_T$ and $I$. We calculate each current as the mean of these measurements, and the uncertainty as the sample standard deviation. If the standard deviation is less than 0.01mA then this value is used instead.
 
-The resulting force measurements are shown in figure~\ref{fig:both-data}a. A linear least squares regression was performed on the mass vs current data. The reduced $\chi^2$ value for the fit was 1.35, which suggests the fit is good.
+The resulting force measurements are shown in figure~\ref{fig:force-data}a. A linear least squares regression was performed on the mass vs current data. The reduced $\chi^2$ value for the fit was 1.35, which suggests the fit is good.
 
-The local gravity can be estimated using a tool provided by the National Oceanic and Atmospheric Administration (NOAA) for a given geographic location. Using this tool and the coordinates of the lab (44.975224 N, 93.234298 W, 830ft above sea level) the local gravity is estimated as $g=980585\pm2\mathrm{milligal}$. Using equation~\ref{eq:force_current} the factor $\Phi_f$ can be extracted from the slope of figure~\ref{fig:both-data}a and this value for gravity. The value of $\Phi_f$ is determined to be $25.55 \pm 0.51\si{\frac{kgm}{s^2A}}$
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=\linewidth]{figs/data/force_data.png}
+    \caption{Force mode measurements, and the least squres regression. The fit parameters suggest $\Phi_f=25.55 \pm 0.51\si{\frac{kgm}{s^2A}}$. The reduced $\chi^2$ value is 1.35, suggesting a good fit.}
+    \label{fig:force-data}
+\end{figure}
 
 
-Calculating the $\Phi_v$ term for the velocity mode has a few additional steps. The first problem arises when trying to calculate the time derivative of the displacement data. One method to calculate the derivative of a signal is the centered difference method (CD), a variation of the finite difference \cite{finite_diff}.
+The local gravity can be estimated using a tool provided by the National Oceanic and Atmospheric Administration (NOAA) for a given geographic location. Using this tool and the coordinates of the lab (44.975224 N, 93.234298 W, 830ft above sea level) the local gravity is estimated as $g=980585\pm2\mathrm{milligal}$. Using equation~\ref{eq:force_current} the factor $\Phi_f$ can be extracted from the slope of figure~\ref{fig:force-data}a and this value for gravity. The value of $\Phi_f$ is determined to be $25.55 \pm 0.51\si{\frac{kgm}{s^2A}}$
+
+% \begin{figure}[t]
+%     \centering
+%     \includegraphics[width=\linewidth]{figs/data/final_data.png}
+%     \caption{The }
+%     \label{fig:both-data}
+% \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Velocity Mode %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Calculating the $\Phi_v$ term for the velocity mode has a few additional steps. The first problem arises when trying to calculate the time derivative of the displacement data. One method to calculate the derivative of a signal is the centered difference method (CD), a variation of the finite difference~\cite{finite_diff}.
 The central difference is defined as
 \begin{equation}
     f'(x) = \frac{f(x+h)-f(x-h)}{2h}
@@ -354,25 +347,25 @@ Figure~\ref{fig:savgol} shows in blue a sample of velocity calculated using the 
 The noise that is present in the original displacement data is significantly amplified when calculating the derivative.
 To suppress this noise we use a Savitzky-Golay (SG) filter to smooth the displacement data before calculating the derivative.
 An SG filter works by fitting an n-th order polynomial to a window of the data, and slides the window across the data set.
-More detail on the SG filter can be found in \cite{press1990savitzky}.
+More detail on the SG filter can be found in~\cite{press1990savitzky}.
 The results of calculating the velocity on the sample data using a SG filter with a window size of 51 and fitting to a 3rd order polynomial are shown in yellow figure~\ref{fig:savgol}.
 As the figure shows the velocity calculation using the SG method agrees well with the velocity calculated using the CD method with significant noise suppression.
 
-\begin{figure}[t]
+\begin{figure}[b]
     \centering
     \includegraphics[width=\linewidth]{figs/data/velocity_savgol.png}
-    \caption{TODO}
+    \caption{An illustration of how the Savitky-Golay (SG) filter can be used to calculate the derivative of a signal, and how it compares to the central difference (CD) method.}
     \label{fig:savgol}
 \end{figure}
 
-An example of standardized time series voltage and displacement measurements for a measurement run are shown in figure~\ref{fig:correlation}a. The figure demonstrates that the velocity data lags behind the voltage data. The amount of lag can be determined using cross-correlation, which put simply is the sliding inner product of the two series. Cross-correlation is explained further in appendix~\ref{apx:correlation}.
+An example of standardized time series voltage and displacement measurements for a measurement run are shown in figure~\ref{fig:correlation}a. The figure demonstrates that the velocity data lags behind the voltage data. The amount of lag can be determined using cross-correlation, which put simply is the sliding inner product of the two series. Cross-correlation is explained further in Appendix~\ref{apx:correlation}.
 This time lag is determined to be 120ms in every measurement run conducted for this experiment, with a few outliers at 110ms or 130ms. These measurement runs were conducted with different frequencies, signal amplitudes, and average displacement of the magnet in the coil.
 Furthermore it is nonsensical to expect the induced voltage to lead the motion of the magnet. These two points suggest that the time lag is not physical, and is instead a systematic in the data collection process.
 
-\begin{figure}[t]
+\begin{figure}[b]
     \centering
-    \includegraphics[width=\linewidth]{figs/data/autocorrelation.png}
-    \caption{TODO}
+    \includegraphics[width=0.85\linewidth]{figs/data/autocorrelation.png}
+    \caption{An illustration of how cross-correlation is used to remove a time shift between velocity and voltage signals.}
     \label{fig:correlation}
 \end{figure}
 
@@ -380,102 +373,45 @@ One possible explanation is that the RS232 serial interface between the displace
 Another possible explanation is that the LabView program itself is contributing to the lag in the way it collects the data, averages it, and assigns it to a specific time step.
 Further inquiry is needed to determine the exact source of the time shift.
 
-An example of the induced voltage and velocity of a measurement run in the velocity mode is shown in figure~\ref{fig:velocity-example}. The data in this figure was prepared using the methods described above. For clarity only a 250 point random sample of the full measurement run are shown. The reduced $\chi^2$ value of the fit is 4.21, suggesting the fit is reasonable but some of the uncertainties may be underestimated. The factor $\Phi_v$ can be determined from the slope of this figure using equation~\ref{eq:velocity_equation}. The $\Phi_v$ factor for this example is determined to be $27.325 \pm 0.077\si{Vs/m}$
+An example of the induced voltage and velocity of a measurement run in the velocity mode is shown in figure~\ref{fig:velocity-example}. The data in this figure was prepared using the methods described above. As the velocity data has been smoothed, the uncertainty in the voltage is assumed to be larger than the uncertainty in the velocity. The uncertainty in the voltage is estimated for each time step as the sample standard deviation within a half wecond window before and after each measurement. For clarity only a 250 point random sample of the full measurement run are shown. The reduced $\chi^2$ value of the fit is 4.21, suggesting the fit is reasonable but some of the uncertainties may be underestimated. The factor $\Phi_v$ can be determined from the slope of this figure using equation~\ref{eq:velocity_equation}. The $\Phi_v$ factor for this example is determined to be $27.325 \pm 0.077\si{Vs/m}$
 
-\begin{figure}[t]
+\begin{figure}[b]
     \centering
-    \includegraphics[width=0.95\linewidth]{figs/data/velocity_data_example.png}
-    \caption{TODO}
+    \includegraphics[width=\linewidth]{figs/data/velocity_data_example.png}
+    \caption{A sample of velocity and voltage measurements. The process described in this section was used to clean the velocity data. Only a sample of 250 data points are shown for this measurement run.}
     \label{fig:velocity-example}
 \end{figure}
 
 The PID setpoint for the force mode measurements was 8.5mm. The center about which the magnets oscillate in the velocity mode can be varied by adding a tare mass to the balance. This experiment assumes that the magnetic field created by the magnets is approximately uniform for small perturbations in the velocity mode. However, as the permanent magnets form a quadrupole, the magnetic field does vary depending on the displacement of the magnets.
 
-\begin{figure}[t]
+\begin{figure}[b]
     \centering
-    \includegraphics[width=\linewidth]{figs/data/final_data.png}
-    \caption{TODO}
-    \label{fig:both-data}
+    \includegraphics[width=\linewidth]{figs/data/velocity_data.png}
+    \caption{Calculated value for $\Phi_v$ as a function of the center of oscillation of the permanent magnet. Many measurements were conducted as described above. The center of oscillation was varied with the tare mass applied to the balance.}
+    \label{fig:velocity-data}
 \end{figure}
 
-The relationship between $\Phi_v$ and the center of oscillation can be determined by varying the center of oscillation and using the above described method to measure $\Phi_v$. This model can then be used to predict the value of $\Phi_v$ when the balance is oscillating about the 8.5mm displacement used as the setpoint in the force mode measurements. These measurements are shown in figure~\ref{fig:both-data}b. The model predicts a value for $\Phi_v$ as $26.2 \pm 3.0$\si{Vs/m}. The value for $\Phi_v$ differs from $\Phi_f$ by $0.2\sigma$. The error rate of the measurements can be defined as $(\Phi_v-\Phi_f)/\Phi_v$. The error rate for these measurements is 2.4\%.
+The relationship between $\Phi_v$ and the center of oscillation can be determined by varying the center of oscillation and using the above described method to measure $\Phi_v$. This model can then be used to predict the value of $\Phi_v$ when the balance is oscillating about the 8.5mm displacement used as the setpoint in the force mode measurements. These measurements are shown in figure~\ref{fig:velocity-data}b. The uncertainty in the measurement of $\Phi_v$ for each data point is estimated as the uncertainty in the slope of the linear regression of each fit of voltage and velocity. The weighted residuals for the fit are shown in figure~\ref{fig:velocity-residuals}. The reduced $\chi^2$ value for this model is 16.06. This suggests that the fit is not adequate, and the possibly some of the uncertainties were underestimated. The model predicts a value for $\Phi_v$ as $26.2 \pm 3.0$\si{Vs/m}. The value for $\Phi_v$ differs from $\Phi_f$ by $0.2\sigma$. The error rate of the measurements can be defined as $(\Phi_v-\Phi_f)/\Phi_v$. The error rate for these measurements is 2.4\%.
+
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=\linewidth]{figs/data/velocity_residuals.png}
+    \caption{The weighted residuals for the velocity mode data.}
+    \label{fig:velocity-residuals}
+\end{figure}
+
 
 The goal of this experiment was to measure unity between $\Phi_f$ and $\Phi_v$, as expressed in equation~\ref{eq:watt_equation}. The measurements described above yields a value for $\Phi_f/\Phi_v$ of $0.98 \pm 0.11$. Unity is within the margin of error for this value, suggesting the experiment was successful. 
 
 
-
-
-%\section{DISCUSSION}
-
-
-
-
-%\begin{figure}[t]
-    %\centering
-    %\includegraphics[width=0.95\linewidth]{figs/data/force_data.png}
-    %\caption{Force data TODO}
-    %\label{fig:force-data}
-%\end{figure}
-
-%\begin{figure}[t]
-    %\centering
-    %\includegraphics[width=0.95\linewidth]{figs/data/velocity_data.png}
-    %\caption{Velocity data TODO}
-    %\label{fig:velocity-data}
-%\end{figure}
-
-
-
-
-
-%\begin{center}
-    %\begin{tabular}{|c|c|c|}\hline
-        %Force Mode & Velocity Mode & Ratio \\\hline
-        %25.1 & 25.6 & 1.02 \\\hline
-    %\end{tabular}
-    %\caption{$\Phi_B L$ factor measurements}
-    %\label{tab:force_data}
-%\end{center}
-
-
-%\begin{table}[b]
-    %\centering
-    %\begin{tabular}{|c|c|c|}\hline
-        %Force Mode & Velocity Mode & Ratio \\\hline
-        %25.1 & 25.6 & 1.02 \\\hline
-    %\end{tabular}
-    %\caption{$\Phi_B L$ factor measurements}
-    %\label{tab:force_data}
-%\end{table}
-
-
-
-%\begin{table}[h!]
-%\centering
-%\begin{tabular}{||c c c c||} 
- %\hline
- %Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
- %\hline\hline
- %1 & 6 & 87837 & 787 \\ 
- %2 & 7 & 78 & 5415 \\
- %3 & 545 & 778 & 7507 \\
- %4 & 545 & 18744 & 7560 \\
- %5 & 88 & 788 & 6344 \\ [1ex] 
- %\hline
-%\end{tabular}
-%\caption{Table to test captions and labels}
-%\label{table:1}
-%\end{table}
-% \begin{figure}[h]
-%     \centering\includegraphics[width=.95\linewidth]{figs/si_units.png}
-%     \caption{As of May 20, 2019, all SI units will be defined in terms of fundamental constants of the universe. 
-%     % Notably, the units of kilogram, ampere, kelvin, and mole will be redefined in terms of Planck's constant $h$, the charge of an electron $e$, the Boltzmann constant $k$, and Avogagro's number $N_A$.
-%     \cite{wiki_si}}\label{fig:si}
-% \end{figure}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CONCLUSION}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A Watt balance was built to measure the relationship between mechanical power and electrical power. Such a device could be used to measure the relationship between Planck's constant and the kilogram by using Josephson junctions and quantum resistance standards to measure electrical units in the experiment. The goal of the experiment was to measure unity in $\Phi_f/\Phi_v$, which was measured to be $0.98 \pm 0.11$.
+A Watt balance was built to measure the relationship between mechanical power and electrical power. Such a device could be used to measure the relationship between Planck's constant and the kilogram by using Josephson junctions and quantum resistance standards to measure electrical units in the experiment. The goal of the experiment was to measure unity in $\Phi_f/\Phi_v$, which was measured to be $0.98 \pm 0.11$. However, as the reduced $\chi^2$ value is $>10$ further inquiry may be needed to verify this finding.
 
 
  
@@ -485,22 +421,27 @@ A Watt balance was built to measure the relationship between mechanical power an
 % \section{References}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cross-Correlation}\label{apx:correlation}
+In signal processing, cross-correlation is equivalent to the convolution of two signals. The convolution of two discrete signals $f$ and $g$ is defined as
+\begin{equation}
+    (f*g)[n] = \sum\limits_{m=-\infty}^\infty f[m]\ g[n-m]
+    \label{eq:convolution}
+\end{equation}
+Figure~\ref{fig:correlation_example} illustrates an example of cross-correlation using two phase shifted sine signals. In figure~\ref{fig:correlation_example}a we see two sinusoidal signals, the second having a phase shift of $\pi/8$. Figure~\ref{fig:correlation_example}b shows the output of the cross-correlation function. The maximum correlation appears at $x\approx0.12\pi$. Shifting the data by this amount puts the signals in phase, as shown in figure~\ref{fig:correlation_example}c. 
 \newpage
-    \section{Cross-Correlation}\label{apx:correlation}
-    In signal processing, cross-correlation is equivalent to the convolution of two signals. The convolution of two discrete signals $f$ and $g$ is defined as
-    \begin{equation}
-        (f*g)[n] = \sum\limits_{m=-\infty}^\infty f[m]\ g[n-m]
-        \label{eq:convolution}
-    \end{equation}
-    Figure~\ref{fig:correlation_example} illustrates an example of cross-correlation using two phase shifted sine signals. In figure~\ref{fig:correlation_example}a we see two sinusoidal signals, the second having a phase shift of $\pi/8$. Figure~\ref{fig:correlation_example}b shows the output of the cross-correlation function. The maximum correlation appears at $x\approx0.12\pi$. Shifting the data by this amount puts the signals in phase, as shown in figure~\ref{fig:correlation_example}c. 
 
-    \begin{figure}[t]
-        \centering
-        \includegraphics[width=0.95\linewidth]{figs/data/correlation_example.png}
-        \caption{Cross-correlation example TODO}
-        \label{fig:correlation_example}
-    \end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figs/data/correlation_example.png}
+    \caption{An illustration of how cross-correlation can be used to detect how much two time-varying signals have been shifted relative to each other.}
+    \label{fig:correlation_example}
+\end{figure}
 
 
 
@@ -514,5 +455,5 @@ A Watt balance was built to measure the relationship between mechanical power an
 % \end{appendices}
 
 
-\bibliography{sources}
+\bibliography{sources.bib}
 \end{document}
